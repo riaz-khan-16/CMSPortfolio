@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    .li{
+        border: dotted;
+            height: 400px;
+      
+       
+    background-color: blanchedalmond;
+    height: 336px;
+    width: 400px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    top: 7rem;
+        
+    }
+    .li h1{
+        text-align: center;
+    }
+
+</style>
+</head>
+
+
+<body>
+    
+    <div class="li">
+
+
+        <h1>Update Landing The Page</h1>
+
+        <form action="do" method="post">
+        {% csrf_token %}
+        FName:<br>
+        <input name="fname" value="{{ mymember.fname }}">
+        <br><br>
+        LName:<br>
+        <input name="lname" value="{{ mymember.lname}}">
+        <br><br>
+        Profe:<br>
+        <input name="prof" value="{{ mymember.prof }}">
+        <br><br>
+        Logo Name:<br>
+        <input name="logo" value="{{ mymember.logo }}">
+        <br><br>
+        <input type="submit" value="Submit">
+        </form>
+
+    </div>
+</body>
+</html>
+

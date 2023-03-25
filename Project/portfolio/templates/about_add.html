@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add About</title>
+<style>
+
+    .li{
+        border: dotted;
+            height: 400px;
+      
+       
+    background-color: blanchedalmond;
+    height: 600px;
+    width: 800px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    top: 7rem;
+        
+    }
+    .li h1{
+        text-align: center;
+    }
+
+    .aboutinput{
+
+
+        height: 50px;
+        width: 600px;
+    }
+
+</style>
+</head>
+
+
+<body>
+    
+    <div class="li">
+
+
+        <h1>Add  About</h1> 
+        <form action="do" method="post">
+        {% csrf_token %}
+        FName:<br>
+        <input name="fname" value="">
+        <br><br>
+        LName:<br>
+        <input name="lname" value="">
+        <br><br>
+        Profe:<br>
+        <input name="prof" value="">
+        <br><br>
+        About:<br>
+        <input name="about" value="" class="aboutinput">
+        <br><br>
+        From:<br>
+        <input name="from" value="">
+        <br><br>
+        Lives In:<br>
+        <input name="live" value="">
+        <br><br>
+        Age:<br>
+        <input name="age" value="">
+        <br><br>
+        Gender:<br>
+        <input name="gender" value="">
+        <br><br>
+        <input type="submit" value="Submit">
+        </form>
+
+    </div>
+</body>
+</html>
+
