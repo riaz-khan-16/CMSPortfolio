@@ -18,7 +18,7 @@ It was created in the project root folder, and has the filename db.sqlite3.
 we must run a command to actually create the table in the database.
 Run this command:
 
-           py manage.py makemigrations Crud_App
+           py manage.py makemigrations portfolio
 
 
 3. The table is not created yet, you will have to run one more command, 
@@ -30,4 +30,4 @@ Run the migrate command:
 4.you can view the SQL statement that were executed from the migration above.
  All you have to do is to run this command, with the migration number:
 
-                    py manage.py sqlmigrate Crud_App 0001
+                    py manage.py sqlmigrate portfolio 0001

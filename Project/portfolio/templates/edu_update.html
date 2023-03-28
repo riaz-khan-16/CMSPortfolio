@@ -35,23 +35,33 @@
     <div class="li">
 
 
-        <h1>Update Your PORTFOLIO</h1>
+        <h1>Update Education</h1>
 
-       <p> Update Your Intro Section:  <a href="cm_1_update/">Update</a> </p>
-       <p> Update Your About Section:  <a href="about_update/">Update</a></p>
+        <form action="do/{{edu.id}}" method="post">
+        {% csrf_token %}
+        Year:<br>
+        <input name="year" value="{{ edu.year }}">
+        <br><br>
 
-      
+        Degree:<br>
+        <input name="degree" value="{{ edu.degree }}">
+        <br><br>
+        Uni:<br>
+        <input name="uni" value="{{ edu.uni }}">
+        <br><br>
+        Detail:<br>
+        <input name="detail" value="{{ edu.detail }}">
+        <br><br>
 
-
-       <p> Update Your Skills Section:  <a href="skill_all/">View All </a></p>
-    
-       <p> Update Your Eduacation Section:  <a href="edu_all/">View All </a></p>
+        <input type="submit" value="Submit">
+     
        
-
-
-
-       
+        </form>
 
     </div>
 </body>
 </html>
+
+
+
+

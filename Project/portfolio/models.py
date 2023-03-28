@@ -19,4 +19,21 @@ class About(models.Model):
         age = models.CharField(max_length=255)
         gender = models.CharField(max_length=255)
 
+class Skill(models.Model):
+        name = models.CharField(max_length=255)
+        per = models.CharField(max_length=255)
+
+class Skill1(models.Model):
+        name = models.CharField(max_length=255)
+        per = models.CharField(max_length=255)        
+
+
+class Education(models.Model):
+        year = models.CharField(max_length=255)
+        degree = models.CharField(max_length=255)
+        uni = models.CharField(max_length=255)
+        detail = models.CharField(max_length=255)
+
+       
+
           

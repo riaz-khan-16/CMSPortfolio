@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    body {
+    
+    }
+    
+
+    .li{
+        border: dotted;
+            height: 400px;
+      
+       
+    background-color: blanchedalmond;
+    height: 336px;
+    width: 800px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    top: 7rem;
+        
+    }
+    .li h1{
+        text-align: center;
+    }
+
+    .li li{
+
+
+        list-style: none;
+    }
+
+    
+    p{
+
+
+       
+
+    }
+
+    table{
+  border:1px solid black;
+ position: relative;
+ border-collapse: collapse;
+ left: 5rem;
+    top: auto;
+}
+
+td{
+    border:1px solid black;
+
+}
+th{
+    border:1px solid black;
+
+}
+
+
+.ll{
+    display: inline-block;
+}
+
+
+table {
+    border: 1px solid black;
+    position: relative;
+    border-collapse: collapse;
+    left: auto;
+    top: auto;
+    margin: 1rem;
+}
+
+    </style>
+</head>
+<body>
+
+
+<div class="li"> 
+    <h1>All Skills</h1> 
+
+
+<div class="ll">
+  <h3> Web Development</h3>
+  <table >
+    <tr>
+      <th>Name</th>
+      <th>Percentage</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+        {% for x in skill %}    
+      <td>{{ x.name }} </td>
+      <td> {{ x.per }}</td>
+      <td><a href="delete/{{ x.id }}">delete</a></td>
+      <td><a href="">Edit</a></td>
+    </tr>
+       {% endfor %}
+
+  </table>
+</div>
+
+
+
+
+
+
+  <div class="ll">
+  <h3> Machine Learning</h3>
+  <table >
+    <tr>
+      <th>Name</th>
+      <th>Percentage</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+        {% for x in skill1 %}    
+      <td>{{ x.name }} </td>
+      <td> {{ x.per }}</td>
+      <td><a href="delete1/{{ x.id }}">delete</a></td>
+      <td><a href="">Edit</a></td>
+    </tr>
+       {% endfor %}
+
+  </table>
+
+</div>
+
+
+
+
+  <p> Add Your: <a href="skill_add/">Skill</a></p>
+<p>Go <a href="cm">Back</a></p>
+</div>
+
+
+
+</body>
+</html>
