@@ -1,7 +1,7 @@
 ﻿
-# Project's Title: CMS Development By DJango,SQLite and JQuery.
+# Title: CMS Development By DJango,SQLite and JQuery.
 
-## Project Description:
+## Description:
 
 #### What the application does:
 The website is made for showing a person's skills, experiences, educational histrory, previous and presend projects, services, contact information etc.
@@ -38,9 +38,9 @@ If you edit small parts, it only overwrite the parts of the file which was chang
   I faced implenting image uploading, editing features with SQLite database. But I found it very easy after
   learning.
 
-How to Install and Run the Project:
+<!-- How to Install and Run the Project: 
 How to Use the Project:
-Features I hope to implement in the future:
+Features I hope to implement in the future: -->
 
 
 
