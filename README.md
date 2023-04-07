@@ -29,7 +29,8 @@ Reading and writing operations are very fast for SQLite database. It is almost 3
 Challenges I faced:
   I faced implenting image uploading, editing features with SQLite database. But I found it very easy after learning.
 
-
+How to Install and Run the Project:
+How to Use the Project:
 Features I hope to implement in the future:
 
 
