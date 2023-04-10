@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    .li{
+        border: dotted;
+        height: auto;
+      
+     
+    height: 336px;
+    width: 400px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    top: 7rem;
+        
+    }
+    .li h1{
+        text-align: center;
+    }
+
+</style>
+</head>
+
+
+<body>
+    
+    <div class="li">
+
+
+        <h1>Update Experience</h1>
+
+        <form action="do/{{exp.id}}" method="post">
+        {% csrf_token %}
+        Year:<br>
+        <input name="year" value="{{ exp.year }}">
+        <br><br>
+
+        Degree:<br>
+        <input name="degree" value="{{ exp.degree }}">
+        <br><br>
+        Uni:<br>
+        <input name="uni" value="{{ exp.uni }}">
+        <br><br>
+        Detail:<br>
+        <input name="detail" value="{{ exp.detail }}">
+        <br><br>
+
+        <input type="submit" value="Submit">
+     
+       
+        </form>
+
+    </div>
+</body>
+</html>
+
+
+
+

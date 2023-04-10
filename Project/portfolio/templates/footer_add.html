@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Footer</title>
+<style>
+
+    .li{
+        border: dotted;
+        height: auto;
+      
+       
+  
+    height: 600px;
+    width: 800px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    top: 7rem;
+        
+    }
+    .li h1{
+        text-align: center;
+    }
+
+    .aboutinput{
+
+
+        height: 50px;
+        width: 600px;
+    }
+
+</style>
+</head>
+
+
+<body>
+    
+    <div class="li">
+
+
+        <h1>Add  Footer</h1> 
+        <form action="do" method="post">
+        {% csrf_token %}
+        Name:<br>
+        <input name="name" value="">
+        <br><br>
+        Address:<br>
+        <input name="addr" value="">
+        <br><br>
+        Instagram:<br>
+        <input name="insta" value="">
+        <br><br>
+        linkedin:<br>
+        <input name="linkedin" value="">
+        <br><br>
+        Twitter :<br>
+        <input name="twitter" value="">
+        <br><br>
+        facebook:<br>
+        <input name="facebook" value="">
+        <br><br>
+        youtube:<br>
+        <input name="youtube" value="">
+        <br><br>
+        Email:<br>
+        <input name="email" value="">
+        <br><br>
+        Phone:<br>
+        <input name="phone" value="">
+        <br><br>
+        
+        <input type="submit" value="Submit">
+        </form>
+
+    </div>
+</body>
+</html>
+
