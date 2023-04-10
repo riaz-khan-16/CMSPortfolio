@@ -1,7 +1,16 @@
 git add .
 git status
-git commit -m "New commit"
+git commit -m "commit-10"
 git remote -v
 git pull origin main --rebase
 git push origin main
 
+
+
+
+git log
+git reflog
+git checkout ac92a6a
+git checkout -b branch_1
+git show ac92a6a
+git checkout ac92a6a .
