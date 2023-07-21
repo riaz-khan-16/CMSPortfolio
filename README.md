@@ -45,3 +45,5 @@ Features I hope to implement in the future: -->
 
 
 
+
+![Image1_backend](https://github.com/riaz-khan-16/CMS_Development_by_Django_and_SQLite/assets/63443462/c4343758-9098-4673-9fc8-89f9c05e3213)
