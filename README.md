@@ -1,6 +1,4 @@
-![image3_backend](https://github.com/riaz-khan-16/CMS_Development_by_Django_and_SQLite/assets/63443462/d3820066-d164-463d-ad13-cc7f231b46a7)
-![Uploading image2_backend.PNG…]()
-![Uploading image6_frontend.PNG…]()
+
 ﻿
 # Title: CMS Development By DJango,SQLite and JQuery.
 
@@ -52,7 +50,26 @@ Features I hope to implement in the future: -->
 ![Image1_backend](https://github.com/riaz-khan-16/CMS_Development_by_Django_and_SQLite/assets/63443462/c4343758-9098-4673-9fc8-89f9c05e3213)
 
 
+![image2_backend](https://github.com/riaz-khan-16/CMS_Development_by_Django_and_SQLite/assets/63443462/91b71023-dac2-4fcf-be45-345249f045e1)
 
-![Uploading image5_frontend.PNG…]()
-![Uploading image4_frontend.PNG…]()
+
+
+
+![image3_backend](https://github.com/riaz-khan-16/CMS_Development_by_Django_and_SQLite/assets/63443462/8a602184-8e4a-4c38-a22f-a7fa1dc9a369)
+
+
+
+
+
+![image4_frontend](https://github.com/riaz-khan-16/CMS_Development_by_Django_and_SQLite/assets/63443462/8e31683f-bd93-4d5b-b94b-500419499b3b)
+
+
+
+
+
+![image5_frontend](https://github.com/riaz-khan-16/CMS_Development_by_Django_and_SQLite/assets/63443462/e9722cc6-f581-41b1-8c0b-d4dc6539357d)
+
+
+
+![image6_frontend](https://github.com/riaz-khan-16/CMS_Development_by_Django_and_SQLite/assets/63443462/a87387f9-60e6-4607-8ef5-674189e81ef4)
 
