@@ -34,6 +34,35 @@ class Education(models.Model):
         uni = models.CharField(max_length=255)
         detail = models.CharField(max_length=255)
 
+class Exp(models.Model):
+        year = models.CharField(max_length=255)
+        degree = models.CharField(max_length=255)
+        uni = models.CharField(max_length=255)
+        detail = models.CharField(max_length=255)        
+
        
+
+#Portfolio
+class Portfolio(models.Model):
+    name = models.CharField(max_length=100)
+    detail=models.CharField(max_length=1000)
+    img = models.ImageField(upload_to='images/')
+
+
+
+class Footer(models.Model):
+        name= models.CharField(max_length=255)
+        addr = models.CharField(max_length=255)
+        insta = models.CharField(max_length=255)
+        linkedin = models.CharField(max_length=255)
+        twitter = models.CharField(max_length=255) 
+        facebook = models.CharField(max_length=255)
+        youtube = models.CharField(max_length=255)
+        email = models.CharField(max_length=255)
+        phone=models.CharField(max_length=255)
+        
+        
+
+
 
           

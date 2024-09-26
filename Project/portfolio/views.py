@@ -6,14 +6,13 @@ from .models import About
 from .models import Skill
 from .models import Skill1
 from .models import Education
+from .models import Exp
 
 
 # Create your views here.
 
 
-def hello(request):
-            template = loader.get_template('hello.html')
-            return HttpResponse(template.render())
+
 def index(request):
             template = loader.get_template('index.html')
             return HttpResponse(template.render())
@@ -34,12 +33,21 @@ def index(request):
     about=About.objects.last
     skill=Skill.objects.all()
     skill1=Skill1.objects.all()
+    edu = Education.objects.all()
+    exp = Exp.objects.all()
+    portfolio = Portfolio.objects.all()
+    footer=Footer.objects.last
     template = loader.get_template('index.html')
     context = {
         'values': value,
         'about':about,
         'skill': skill,
         'skill1': skill1,
+        'edu':edu,
+        'exp':exp,
+        'portfolio':portfolio,
+        'footer':footer
+       
     }
     return HttpResponse(template.render(context, request))    
 
@@ -224,7 +232,7 @@ def edu_add_do(request):
             detail = detail
             )
             edu.save()
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(reverse('edu_all'))
 
 def edu_all(request):
     edu = Education.objects.all().values()
@@ -262,3 +270,197 @@ def edu_delete(request, id):
             edu = Education.objects.get(id=id)
             edu.delete()
             return HttpResponseRedirect(reverse('edu_all'))        
+
+
+#Experience
+
+#education
+
+
+def exp_add(request):
+        template = loader.get_template('exp_add.html')
+        return HttpResponse(template.render({}, request))
+
+
+def exp_add_do(request):
+            year = request.POST['year']
+            degree = request.POST['degree']
+            uni = request.POST['uni']
+            detail = request.POST['detail']
+          
+            exp = Exp(
+                    year = year,
+            degree = degree,
+            uni = uni,
+            detail = detail
+            )
+            exp.save()
+            return HttpResponseRedirect(reverse('index'))
+
+def exp_all(request):
+    exp = Exp.objects.all().values()
+    template = loader.get_template('exp_all.html')
+    context = {
+        'exp': exp,
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def exp_update(request, id):
+            exp = Exp.objects.get(id=id)
+            template = loader.get_template('exp_update.html')
+            context = {
+                'exp': exp,
+            }
+            return HttpResponse(template.render(context, request)) 
+
+def exp_update_do(request, id):
+            year = request.POST['year']
+            degree = request.POST['degree']
+            uni = request.POST['uni']
+            detail = request.POST['detail']
+
+            exp = Exp.objects.get(id=id)
+            exp.year = year
+            exp.degree = degree
+            exp.uni = uni
+            exp.detail = detail
+            
+            exp.save()
+            return HttpResponseRedirect(reverse('exp_all'))
+        
+def exp_delete(request, id):
+            exp = Exp.objects.get(id=id)
+            exp.delete()
+            return HttpResponseRedirect(reverse('exp_all'))      
+
+
+
+
+
+
+
+
+
+
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from .forms import *
+
+
+def portfolio_add(request):
+ 
+    if request.method == 'POST':
+        form = PortfolioForm(request.POST, request.FILES)
+ 
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = PortfolioForm()
+    return render(request, 'portfolio.html', {'form': form})
+ 
+
+def success(request):
+    return HttpResponse('successfully uploaded')
+
+def portfolio_all(request):
+ 
+    if request.method == 'GET':
+ 
+        # getting all the objects of hotel.
+        portfolio = Portfolio.objects.all()
+    
+        template = loader.get_template('portfolio_all.html')
+        context = {
+            'portfolio': portfolio
+        }
+        return HttpResponse(template.render(context, request))
+
+    
+def portfolio_delete(request, id):
+            portfolio = Portfolio.objects.get(id=id)
+            portfolio.delete()   
+            return HttpResponse('successfully Deleted') 
+
+def portfolio_detail(request, id):
+            detail = Portfolio.objects.get(id=id)
+              
+            template = loader.get_template('portfolio_detail.html')
+            context = {
+                'detail': detail
+            }
+            return HttpResponse(template.render(context, request)) 
+
+    
+
+    # Footer
+
+def footer_add(request):
+        template = loader.get_template('footer_add.html')
+        return HttpResponse(template.render({}, request))
+
+def footer_add_do(request):
+            name = request.POST['name']
+            addr = request.POST['addr']
+            insta = request.POST['insta']
+            linkedin = request.POST['linkedin']
+            twitter = request.POST['twitter']
+            facebook = request.POST['facebook']
+            youtube = request.POST['youtube']
+            email = request.POST['email']
+            phone=request.POST['phone']
+            
+          
+            footer = Footer(
+            name = name,
+            addr = addr,
+            insta =insta,
+            linkedin = linkedin,
+            twitter = twitter,
+            facebook =facebook,
+            youtube = youtube,
+            email = email,
+            phone=phone,
+            
+            )
+            footer.save()
+            return HttpResponseRedirect(reverse('index'))
+
+
+def footer_update(request):
+        footer = Footer.objects.last
+        template = loader.get_template('footer_update.html')
+        context = {
+            'footer': footer,
+        }
+        return HttpResponse(template.render(context, request))
+
+def footer_update_do(request):
+            name = request.POST['name']
+            addr = request.POST['addr']
+            insta = request.POST['insta']
+            linkedin = request.POST['linkedin']
+            twitter = request.POST['twitter']
+            facebook = request.POST['facebook']
+            youtube = request.POST['youtube']
+            email = request.POST['email']
+            phone=request.POST['phone']
+
+            footer = Footer.objects.last()
+            footer = Footer(
+            name = name,
+            addr = addr,
+            insta =insta,
+            linkedin = linkedin,
+            twitter = twitter,
+            facebook =facebook,
+            youtube = youtube,
+            email = email,
+            phone=phone,
+            
+            )
+            
+            
+            footer.save()
+            return HttpResponseRedirect(reverse('index'))    

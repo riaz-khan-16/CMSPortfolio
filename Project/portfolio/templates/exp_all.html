@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    body {
+    
+    }
+    
+
+    .li{
+        border: dotted;
+        height: auto;
+      
+       
+    
+    height: 336px;
+    width: 800px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    top: 7rem;
+    width: 880px;
+        
+    }
+    .li h1{
+        text-align: center;
+    }
+
+    .li li{
+
+
+        list-style: none;
+    }
+
+    
+    p{
+
+
+       
+
+    }
+
+    table{
+  border:1px solid black;
+ position: relative;
+ border-collapse: collapse;
+ left: 5rem;
+    top: auto;
+   
+    
+}
+
+td{
+    border:1px solid black;
+
+}
+th{
+    border:1px solid black;
+
+}
+
+
+
+
+
+table {
+    border: 1px solid black;
+    position: relative;
+    border-collapse: collapse;
+    left: auto;
+    top: auto;
+    
+    margin: auto;
+    margin: 0px 48px
+}
+td {
+    border: 1px solid black;
+
+}
+
+table {
+    border: 1px solid black;
+    position: relative;
+    border-collapse: collapse;
+    left: auto;
+    top: auto;
+    margin: 0 80px;
+}
+
+.li{
+        border: dotted;
+            height: auto;}
+
+    </style>
+</head>
+<body>
+
+
+<div class="li"> 
+    <h1>Experience</h1> 
+
+
+
+  <table >
+    <tr>
+      <th>Year</th>
+      <th>Position</th>
+      <th>Company </th>
+      <th>Detail</th>
+    </tr>
+    <tr>
+        {% for x in exp %}    
+      <td>{{ x.year }} </td>
+      <td> {{ x.degree }}</td>
+      <td>{{ x.uni }} </td>
+      <td> {{ x.detail }}</td>
+      <td><a href="exp_delete/{{ x.id }}">delete</a></td>
+      <td><a href="exp_update/{{ x.id }}">Edit</a></td>
+    </tr>
+       {% endfor %}
+
+  </table>
+
+
+
+
+
+  <p> Add Your: <a href="exp_add/">Experience</a></p>
+<p>Go <a href="cm">Back</a></p>
+</div>
+
+
+
+</body>
+</html>

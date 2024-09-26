@@ -38,7 +38,7 @@
 
 </head>
 <body class="theme-red">
-  
+ 
   <!-- Back to top button -->
   <div class="btn-back_to_top">
     <span class="ti-arrow-up"></span>
@@ -200,59 +200,38 @@
         <div class="col-md-6 wow fadeInRight">
           <h2 class="fw-normal">Education</h2>
           <ul class="timeline mt-4 pr-md-5">
+
+            {% for x in edu %} 
             <li>
-              <div class="title">2010</div>
+              <div class="title">{{x.year}}</div>
               <div class="details">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+                <h5>{{x.degree}}</h5>
+                <small class="fg-theme">{{x.uni}}</small>
+                <p>{{x.detail}}</p>
               </div>
             </li>
-            <li>
-              <div class="title">2009</div>
-              <div class="details">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-              </div>
-            </li>
-            <li>
-              <div class="title">2008</div>
-              <div class="details">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-              </div>
-            </li>
+            {% endfor %}
+            
+        
           </ul>
         </div>
         <div class="col-md-6 wow fadeInRight" data-wow-delay="200ms">
           <h2 class="fw-normal">Experience</h2>
           <ul class="timeline mt-4 pr-md-5">
+
+            {% for x in exp %}
             <li>
-              <div class="title">2017 - Current</div>
+              <div class="title">{{x.year}}</div>
               <div class="details">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+                <h5>{{x.degree}}</h5>
+                <small class="fg-theme">{{x.uni}}</small>
+                <p>{{x.detail}}</p>
               </div>
             </li>
             <li>
-              <div class="title">2014</div>
-              <div class="details">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-              </div>
-            </li>
-            <li>
-              <div class="title">2011</div>
-              <div class="details">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-              </div>
-            </li>
+
+            {% endfor %}  
+              
           </ul>
         </div>
       </div>
@@ -354,17 +333,37 @@
         <button class="btn btn-theme-outline" data-filter=".wireframes">Wireframes</button>
       </div>
 
+
       <div class="gridder my-3">
+      {% for x in portfolio %}
+      
+      
         <div class="grid-item apps wow zoomIn">
-          <div class="img-place" data-src="{% static 'assets/img/work/work-1.jpg'  %}" data-fancybox data-caption="<h5 class='fg-theme'>Mobile Travel App</h5> <p>Travel, Discovery</p>">
-            <img src="{% static 'assets/img/work/work-1.jpg' %}" alt="">
+          <div class="img-place" data-src="{{ x.img.url }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ x.name }}</h5> <p>{{ x.name }}</p>">
+            <img src="{{ x.img.url }}" alt="">
+            
             <div class="img-caption">
-              <h5 class="fg-theme">Mobile Travel App</h5>
-              <p>Travel, Discovery</p>
+              <h5 class="fg-theme">{{ x.name }}</h5>
             </div>
           </div>
+          <p style="text-align: center;"><a href="portfolio_detail/{{x.id}}">Details About Project</a></p>
         </div>
-        <div class="grid-item template wireframes wow zoomIn">
+      
+
+        {% endfor %}
+
+
+        
+
+      </div>
+      <div class="text-center wow fadeInUp">
+        <a href="javascript:void(0)" class="btn btn-theme">Load More</a>
+      </div>
+
+    </div>
+  </div>
+
+        <!-- <div class="grid-item template wireframes wow zoomIn">
           <div class="img-place" data-src="assets/img/work/work-2.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Music App</h5> <p>Musics</p>">
             <img src="{% static 'assets/img/work/work-2.jpg' %}" alt="">
             <div class="img-caption">
@@ -397,8 +396,8 @@
             <div class="img-caption">
               <h5 class="fg-theme">Musics Discover</h5>
               <p>Musics, Dashboard</p>
-            </div>
-          </div>
+            </div> -->
+          <!-- </div>
         </div>
         <div class="grid-item graphic ui-ux wireframes wow zoomIn">
           <div class="img-place" data-src="{% static 'assets/img/work/work-6.jpg' %}" data-fancybox data-caption="<h5 class='fg-theme'>Game Streaming</h5> <p>Games, Streaming</p>">
@@ -409,12 +408,10 @@
             </div>
           </div>
         </div>
-      </div> <!-- End gridder -->
-      <div class="text-center wow fadeInUp">
-        <a href="javascript:void(0)" class="btn btn-theme">Load More</a>
-      </div>
-    </div>
-  </div> <!-- End Portfolio page -->
+      </div> End gridder -->
+
+      
+       <!-- End Portfolio page -->
   
   <!-- Testimonial -->
   <div class="vg-page page-testimonial">
@@ -475,55 +472,7 @@
     </div>
   </div> <!-- End testimonial -->
   
-  <!-- Client -->
-  <div class="vg-page page-client">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-4 col-xl-3 item">
-          <div class="img-place wow fadeInUp">
-            <img src="assets/img/logo/company_1.svg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xl-3 item">
-          <div class="img-place wow fadeInUp">
-            <img src="assets/img/logo/company_2.svg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xl-3 item">
-          <div class="img-place wow fadeInUp">
-            <img src="assets/img/logo/company_3.svg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xl-3 item">
-          <div class="img-place wow fadeInUp">
-            <img src="assets/img/logo/company_4.svg" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-lg-4 col-xl-3 item">
-          <div class="img-place wow fadeInUp">
-            <img src="assets/img/logo/company_5.svg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xl-3 item">
-          <div class="img-place wow fadeInUp">
-            <img src="assets/img/logo/company_6.svg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xl-3 item">
-          <div class="img-place wow fadeInUp">
-            <img src="assets/img/logo/company_7.svg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xl-3 item">
-          <div class="img-place wow fadeInUp">
-            <img src="assets/img/logo/company_8.svg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> <!-- End client -->
+ 
   
   <!-- Blog -->
   <div class="vg-page page-blog" id="blog">
@@ -614,14 +563,14 @@
   
   <!-- Footer -->
   <div class="vg-footer">
-    <h1 class="text-center">Virtual Folio</h1>
+    <h1 class="text-center">{{footer.name}}</h1>
     <div class="container">
       <div class="row">
         <div class="col-lg-4 py-3">
           <div class="footer-info">
             <p>Where to find me</p>
             <hr class="divider">
-            <p class="fs-large fg-white">1600 Amphitheatre Parkway Mountain View, California 94043 US</p>
+            <p class="fs-large fg-white">{{footer.addr}}</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3 py-3">
@@ -629,10 +578,11 @@
             <p>Follow me</p>
             <hr class="divider">
             <ul class="list-unstyled">
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Youtube</a></li>
+              <li><a href="{{footer.linkedin}}">Linkedin</a></li>
+              <li><a href="{{footer.insta}}">Instagram</a></li>
+              <li><a href="{{footer.facebook}}">Facebook</a></li>
+              <li><a href="{{footer.twitter}}">Twitter</a></li>
+              <li><a href="{{footer.youtube}}">Youtube</a></li>
             </ul>
           </div>
         </div>
@@ -641,9 +591,9 @@
             <p>Contact me</p>
             <hr class="divider">
             <ul class="list-unstyled">
-              <li>info@virtual.com</li>
-              <li>+8890234</li>
-              <li>+813023</li>
+              <li>{{footer.email}}</li>
+              <li>{{footer.phone}}</li>
+              
             </ul>
           </div>
         </div>
@@ -660,9 +610,7 @@
             </div>
           </form>
         </div>
-        <div class="col-12">
-          <p class="text-center mb-0 mt-4">Copyright &copy;2020. All right reserved | This template is made with <span class="ti-heart fg-theme-red"></span> by <a href="https://www.macodeid.com/">MACode ID</a></p>
-        </div>
+       
       </div>
     </div>
   </div> <!-- End footer -->
